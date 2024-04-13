@@ -1,0 +1,86 @@
+﻿
+
+@model GamesStore.Web.Models.UserLogin
+<head>
+</head>
+
+<style>
+     body {
+          font-family: Arial, sans-serif;
+          background-image: url('/Vendor/_images/banner-bg.jpg');
+     }
+
+     .login-container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-top: 200px;
+     }
+
+          .login-container h2 {
+               text-align: center;
+               margin-bottom: 20px;
+          }
+
+     .form-group {
+          margin-bottom: 20px;
+     }
+
+          .form-group label {
+               display: block;
+               margin-bottom: 5px;
+               font-weight: bold;
+          }
+
+          .form-group input[type="text"],
+          .form-group input[type="password"] {
+               width: 100%;
+               padding: 10px;
+               border: 1px solid #ccc;
+               border-radius: 3px;
+          }
+
+          .form-group button {
+               width: 100%;
+               padding: 10px;
+               background-color: #007bff;
+               border: none;
+               color: #fff;
+               cursor: pointer;
+               border-radius: 3px;
+          }
+
+               .form-group button:hover {
+                    background-color: #0056b3;
+               }
+</style>
+
+
+@using (Html.BeginForm("_Login", "Login", FormMethod.Post))
+{
+     <body>
+          @Html.AntiForgeryToken()
+          <div class="login-container">
+               <h2>Login</h2>
+               <div class="form-group">
+                    @Html.LabelFor(m => m.Credential)
+                    @Html.TextBoxFor(m => m.Credential, new { required = "required" })
+                    @Html.ValidationMessageFor(m => m.Credential)
+               </div>
+
+               <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { required = "required" })
+                    @Html.ValidationMessageFor(m => m.Password)
+               </div>
+               <div class="form-group">
+                    <button type="submit">Login</button>
+               </div>
+          </div>
+     </body>
+}
+
+

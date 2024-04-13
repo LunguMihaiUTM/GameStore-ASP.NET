@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "_Header";
+}
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+     <div class="container">
+          <div class="row">
+               <div class="col-12">
+                    <nav class="main-nav">
+                         <!-- ***** Logo Start ***** -->
+                         <a href="index.html" class="logo">
+                              <img src="assets/images/logo.png" alt="" style="width: 158px;">
+                         </a>
+                         <!-- ***** Logo End ***** -->
+                         <!-- ***** Menu Start ***** -->
+                         <ul class="nav">
+                              <li><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
+                              <li><a href="shop.html">Our Shop</a></li>
+                              <li><a href="product-details.html">Product Details</a></li>
+                              <li><a href="contact.html">Contact Us</a></li>
+                              <li><a class ="login" href="@Url.Action("_Login", "Login")">Log In</a></li>
+                              <li><a class="register" href="@Url.Action("_Register", "Login")">Sign In</a></li>
+                         </ul>   
+                         <a class='menu-trigger'>
+                              <span>Menu</span>
+                         </a>
+                         <!-- ***** Menu End ***** -->
+                    </nav>
+               </div>
+          </div>
+     </div>
+</header>
+<!-- ***** Header Area End ***** -->
